@@ -1,46 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//call by value
-
-/*void swap (int x, int y)
+int main(void)
 {
-    int temp;
-    temp = x;
-    x = y;
-    y = temp;
-}
+  int i;
+  int grade[5];
+  int average = 0; 
 
-void main(void)
-{
-  int a = 3;
-  int b = 5;
-  swap(a,b);
-  printf("a:%i,b:%i\n",a,b);
+  for(i=0;i<5;i++)
+  {
+    printf("input value[%i] = ", i);
+    scanf("%d", &grade[i]);
+  }
+
+  for(i=0;i<5;i++)
+  {
+   printf("grade[%i] = %i\n", i,*(grade+i));  
+   average = average + *(grade+i);           
+  }  //반복문 및 포인터 문법을 통해 grade 배열 값 출력 및 평균 값 계산
   
-  system("PAUSE");	
-  return 0;
-}*/
-//결과  a : 3, b : 5
-
-//call by reterence
-
-void swap (int *x, int *y)
-{
-    int temp;
-    temp = *x;
-    *x = *y;
-    *y = temp;
-}
-
-void main(void)
-{
-  int a = 3;
-  int b = 5;
-  swap(&a,&b);
-  printf("a:%i,b:%i\n",a,b);
-
+  printf("average = %i\n",average/5);  
   system("PAUSE");	
   return 0;
 }
-// 결과 a : 5, b : 3  
