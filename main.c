@@ -3,23 +3,22 @@
 
 int main(void)
 {
-  int i;
-  int grade[5];
-  int average = 0; 
+  char*pc;
+  int*pi;
+  double*pd;
 
-  for(i=0;i<5;i++)
-  {
-    printf("input value[%i] = ", i);
-    scanf("%d", &grade[i]);
-  }
+  pc = (char*)10000;
+  pi = (int*)10000;
+  pd = (double*)10000;
 
-  for(i=0;i<5;i++)
-  {
-   printf("grade[%i] = %i\n", i,*(grade+i));  
-   average = average + *(grade+i);           
-  }  //반복문 및 포인터 문법을 통해 grade 배열 값 출력 및 평균 값 계산
+  printf("증가 전 : pc = %d, pi = %d, pd = %d\n", pc, pi, pd);
+
+  pc++;
+  pi++;
+  pd++;
+  printf("증가 후 : pc = %d, pi = %d, pd = %d\n", pc, pi, pd);
   
-  printf("average = %i\n",average/5);  
   system("PAUSE");	
   return 0;
 }
+//
